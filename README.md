@@ -54,4 +54,4 @@ Opcional (recomendado): use a extensão Live Server no VS Code para atualizar au
 
 ## Autor
 
-Projeto desenvolvido para prática de front-end na Imersão Front-End.
+Projeto pessoal criado como lembrete e exercício de retomada de HTML e CSS, após um tempo sem praticar.
