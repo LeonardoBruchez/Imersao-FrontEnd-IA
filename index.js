@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	perfis.forEach((perfil) => {
 		perfil.addEventListener('click', () => {
 			const nome = perfil.querySelector('figcaption')?.textContent?.trim();
-			const imagem = perfil.querySelector('img')?.getAttribute('src');
+			const imagem = perfil.querySelector('img')?.src;
 
 			if (nome && imagem) {
 				localStorage.setItem(PERFIL_NOME_KEY, nome);
