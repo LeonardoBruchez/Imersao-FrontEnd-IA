@@ -1,26 +1,25 @@
-# Clone da Tela de Perfis Netflix
+# Imersao Front Links - Netflix Clone
 
-Projeto front-end simples que replica a tela de seleção de perfis no estilo Netflix, com suporte a tema claro/escuro e layout responsivo.
+Projeto front-end em HTML, CSS e JavaScript que simula:
 
-## Preview
-
-A interface exibe:
-- Título "Quem está assistindo?"
-- Lista de perfis com imagem e nome
-- Botão de alternância de tema (dark/light)
+- Uma tela de seleção de perfis estilo Netflix
+- Uma pagina de catalogo com carrosséis dinâmicos
+- Persistência de dados com localStorage (tema e perfil ativo)
 
 ## Funcionalidades
 
-- Estrutura semântica em HTML
-- Estilização com CSS responsivo (desktop, tablet e mobile)
-- Alternância de tema com JavaScript
-- Persistência de tema com `localStorage`
+- Seleção de perfil na pagina inicial
+- Salvamento do perfil ativo (nome e imagem) no localStorage
+- Exibição do perfil selecionado no topo da pagina de catalogo
+- Alternância de tema na tela inicial
+- Layout responsivo para desktop e mobile
+- Catalogo com categorias renderizadas via JavaScript modular
 
 ## Tecnologias
 
 - HTML5
 - CSS3
-- JavaScript (vanilla)
+- JavaScript (ES Modules)
 
 ## Estrutura do projeto
 
@@ -28,30 +27,49 @@ A interface exibe:
 .
 ├── assets/
 ├── index.html
+├── index.js
 ├── style.css
 ├── theme.js
-└── README.md
+├── README.md
+└── catalogo/
+	├── catalogo.html
+	├── catalogo.css
+	└── js/
+		├── data.js
+		├── main.js
+		├── utils.js
+		└── components/
+			├── Card.js
+			└── Carousel.js
 ```
 
-## Como executar
+## Fluxo de uso
+
+1. Abra `index.html` no navegador.
+2. Clique em um perfil.
+3. O projeto salva automaticamente no localStorage:
+   - `perfilAtivoNome`
+   - `perfilAtivoImagem`
+4. A pagina `catalogo/catalogo.html` le esses dados e atualiza nome/avatar no cabecalho.
+
+## Como executar localmente
 
 1. Abra a pasta do projeto no VS Code.
-2. Abra o arquivo `index.html` no navegador.
+2. Inicie com Live Server (recomendado) ou abra `index.html` diretamente no navegador.
+3. Navegue para o catalogo clicando em um perfil.
 
-Opcional (recomendado): use a extensão Live Server no VS Code para atualizar automaticamente ao salvar alterações.
+## Onde personalizar
 
-## Personalização rápida
+- Perfis da tela inicial: `index.html`
+- Logica de persistencia do perfil: `index.js`
+- Tema claro/escuro: `theme.js`
+- Layout da home: `style.css`
+- Layout do catalogo: `catalogo/catalogo.css`
+- Dados das categorias e cards: `catalogo/js/data.js`
 
-- Para trocar nomes e fotos dos perfis, edite os itens em `index.html`.
-- Para ajustar cores, fontes e responsividade, altere `style.css`.
-- Para mudar a lógica de tema, ajuste `theme.js`.
+## Possiveis melhorias
 
-## Melhorias futuras
-
-- Adicionar animações de hover mais elaboradas
-- Melhorar acessibilidade (ex.: textos alternativos nas imagens)
-- Criar versão com dados dinâmicos (JSON/API)
-
-## Autor
-
-Projeto pessoal criado como lembrete e exercício de retomada de HTML e CSS, após um tempo sem praticar.
+- Melhorar acessibilidade (atributos alt descritivos e foco por teclado)
+- Criar fallback visual quando nao houver perfil salvo
+- Adicionar busca e filtros no catalogo
+- Integrar dados reais via API
